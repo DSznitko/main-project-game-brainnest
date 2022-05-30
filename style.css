@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(45deg, #000428, #004e92);
+  font-family: "Roboto", sans-serif;
+}
+
+.game-title {
+  text-align: center;
+  margin-top: 5rem;
+  color: #fff;
+}
+
+.game-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12rem;
+}
+
+.player-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 5rem;
+}
+
+.player-choice-tilte {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.player-choice {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.4rem;
+  color: gray;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.player-score {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.current-player-score {
+  color: greenyellow;
+}
+
+.board {
+  margin: 0 2rem;
+  color: greenyellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.result {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.play-game {
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: linear-gradient(35deg, #302b63, #24243e);
+  transition: all 1s ease;
+}
+
+.play-game:hover {
+  background: #000428;
+}
+
+.play-game:active {
+  transform: scale(0.8);
+}
+
+.computer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5rem;
+}
+
+.computer-choice-tilte {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.computer-choice {
+  font-size: 1.4rem;
+  color: gray;
+  padding: 0.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.computer-score {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.current-computer-score {
+  color: greenyellow;
+}
+
+.game-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  padding: 5rem 0;
+  border-radius: 10px;
+  transition: all 0.8s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.game-popup.active {
+  pointer-events: all;
+  opacity: 1;
+}
+
+.game-result {
+  color: #fff;
+  font-weight: bold;
+}
+
+.play-again {
+  border: none;
+  padding: 0.6rem 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  background-color: #24243e;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.8s ease;
+}
+
+.play-again:hover {
+  background-color: #004e92;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock, Paperm Scrissors game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 class="game-title">Rock, Paper, Scissors game</h1>
+
+  <div class="game-panel">
+    <div class="player-wrapper">
+      <h3 class="player-choice-tilte">Your choice:</h3>
+      <select class="player-choice">
+        <option value="rock">rock</option>
+        <option value="paper">paper</option>
+        <option value="scissors">scissors</option>
+      </select>
+      <p class="player-score">your score: <span class="current-player-score">0</span></p>
+    </div>
+    <div class="board">
+      <h2 class="result"></h2>
+      <button class="play-game">Play round</button>
+    </div>
+    <div class="computer-wrapper">
+      <h3 class="computer-choice-tilte">computer choice:</h3>
+      <span class="computer-choice"></span>
+      <p class="computer-score">computer score: <span class="current-computer-score">0</span></p>
+    </div>
+  </div>
+
+  <div class="game-popup">
+    <h3 class="game-result"></h3>
+    <button class="play-again">Play again</button>
+  </div>
+
+
+  <script src="main.js"></script>
+</body>
+
+</html>
