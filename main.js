@@ -12,6 +12,10 @@ let playerCurrentScore = 0;
 let aiCurrentScore = 0;
 
 // FUNCTIONS
+const updateScore = () => {
+  playerScore.textContent = playerCurrentScore;
+  aiScore.textContent = aiCurrentScore;
+};
 
 const playRound = () => {
   // COMPUTER CHOICE
@@ -21,8 +25,6 @@ const playRound = () => {
   const computerSelection = computerOptions[randomChoice];
   aiChoice.textContent = computerSelection;
   // ADDING SCORE VARIABLES
-  playerScore.textContent = playerCurrentScore;
-  aiScore.textContent = aiCurrentScore;
 
   // PLAYER CHOICE
   const playerSelection = playerChoiceInput.value;
@@ -33,7 +35,9 @@ const playRound = () => {
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
     playerCurrentScore++;
+    updateScore();
     roundResult.textContent = "Player win this round!";
+    return;
 
     // CHECK IF COMPUTER WIN STATEMENTS
   } else if (
@@ -42,7 +46,9 @@ const playRound = () => {
     (computerSelection === "paper" && playerSelection === "rock")
   ) {
     aiCurrentScore++;
+    updateScore();
     roundResult.textContent = "Computer win this round!";
+    return;
   } else {
     roundResult.textContent = "We got a draw!";
   }

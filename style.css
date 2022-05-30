@@ -59,7 +59,7 @@ body {
 }
 
 .board {
-  margin: 0 2rem;
+  margin: 0 4rem;
   color: greenyellow;
   display: flex;
   flex-direction: column;
@@ -73,8 +73,11 @@ body {
 
 .play-game {
   margin-top: 2rem;
+  width: 140px;
+  max-width: 140px;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  align-self: center;
   border: none;
   border-radius: 10px;
   color: #fff;
