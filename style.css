@@ -170,3 +170,11 @@ body {
 .play-again:hover {
   background-color: #004e92;
 }
+
+.game-goal {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: greenyellow;
+  margin: 3rem 0;
+}

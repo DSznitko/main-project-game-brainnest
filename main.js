@@ -7,6 +7,9 @@ const aiScore = document.querySelector(".current-computer-score");
 const roundResult = document.querySelector(".result");
 const playGameBtn = document.querySelector(".play-game");
 const playAgainBtn = document.querySelector(".play-again");
+const gamePopup = document.querySelector(".game-popup");
+const popupText = document.querySelector(".game-result");
+const closePopupBtn = document.querySelector(".play-again");
 
 let playerCurrentScore = 0;
 let aiCurrentScore = 0;
@@ -17,6 +20,24 @@ const updateScore = () => {
   aiScore.textContent = aiCurrentScore;
 };
 
+// CHECKING SCORE FUNCTION
+const checkScore = () => {
+  if (playerCurrentScore === 3) {
+    gamePopup.classList.add("active");
+    popupText.textContent = "Congratulations! You won the game";
+  } else if (aiCurrentScore === 3) {
+    gamePopup.classList.add("active");
+    popupText.textContent = "Meh, you lose. Maybe try again?!";
+  }
+};
+
+//RESTART GAME FUNCTION
+const playAgain = () => {
+  gamePopup.classList.remove("active");
+  location.reload();
+};
+
+// MAIN FUNCTION
 const playRound = () => {
   // COMPUTER CHOICE
 
@@ -24,7 +45,6 @@ const playRound = () => {
   const randomChoice = Math.floor(Math.random() * computerOptions.length);
   const computerSelection = computerOptions[randomChoice];
   aiChoice.textContent = computerSelection;
-  // ADDING SCORE VARIABLES
 
   // PLAYER CHOICE
   const playerSelection = playerChoiceInput.value;
@@ -37,6 +57,7 @@ const playRound = () => {
     playerCurrentScore++;
     updateScore();
     roundResult.textContent = "Player win this round!";
+    checkScore();
     return;
 
     // CHECK IF COMPUTER WIN STATEMENTS
@@ -48,6 +69,7 @@ const playRound = () => {
     aiCurrentScore++;
     updateScore();
     roundResult.textContent = "Computer win this round!";
+    checkScore();
     return;
   } else {
     roundResult.textContent = "We got a draw!";
@@ -55,5 +77,5 @@ const playRound = () => {
 };
 
 // ADD LISTENERS
-
+closePopupBtn.addEventListener("click", playAgain);
 playGameBtn.addEventListener("click", playRound);
